@@ -1,0 +1,16 @@
+name: Rename to index
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          git config user.name "harwash95-afk"
+          git config user.email "harwash95-afk@users.noreply.github.com"
+          git mv chef-harwash-website.html index.html
+          git commit -m "Rename chef-harwash-website.html to index.html"
+          git push
